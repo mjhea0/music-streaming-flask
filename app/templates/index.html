@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+ 
+{% if filename %}
+    <div>
+        <h2>Song : {{ filename }}</h2>
+        <div class="hero-unit">
+        <audio class="audio" controls>
+            <source src="uploads/{{ filename }}" type="audio/mpeg">
+        </audio><hr/>
+ 
+        <p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Home</a>
+            <a href="/uploads/{{ filename }}" class="btn btn-info">Download</a>
+            <a href="{{ url_for('upload_file') }} " class="btn btn-danger">Upload Another</a>
+        </p>
+ 
+        </div>
+ 
+    </div>
+{% else %}
+ 
+<div class="form-audio">
+    <h2>Upload Song</h2>
+    <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="button" multiple> <br/><br/>
+        <input type="submit" value="Upload" class="btn btn-danger">
+      </form>
+</div>
+{% endif %}
+{% endblock %}

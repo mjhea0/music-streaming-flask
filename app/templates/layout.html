@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Streaming App</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"/>
+</head>
+<body>
+<div class="container">
+      <div class="page-header">
+        <h1>Flask Audio Streaming App</h1>
+      </div>
+    {% block content %}
+    {% endblock %}
+    <hr>
+</div>
+</body>
+</html>
